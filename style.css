@@ -5,6 +5,9 @@ body {
 }
 h1 {
   font-family: 'Share Tech Mono', monospace;
+  margin-left: 50px;
+  margin-top: 50px;
+  
 }
 p {
   font-family: "Garamond";
