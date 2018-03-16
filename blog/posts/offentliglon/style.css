@@ -1,0 +1,37 @@
+<style>
+
+body {
+}
+h1 {
+  font-family: 'Quicksand', 'Helvetica', sans-serif;
+  font-size: 4em;
+  text-align: center;
+}
+h2 {
+  font-family: 'EB Garamond', 'Helvetica', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+}
+p {
+  font-family: 'EB Garamond', 'Times', serif;
+  font-size: 1.4em;
+}
+.post_container a {
+  font-family: 'EB Garamond', 'Times', serif;
+  font-size: 1.4em;
+}
+.post_container {
+  padding-bottom: 250px;
+}
+#text_block {
+  padding: 50px 32% 0 32%;
+}
+#post_heading {
+  padding-top: 50px;
+}
+.first_letter {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+</style>
