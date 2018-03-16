@@ -1,0 +1,38 @@
+<style>
+body {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+h1 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.8em;
+  margin-left: 70px;
+  margin-top: 50px;
+  color: #555;
+}
+h2 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.4em;
+  margin-left: 70px;
+  color: #555;
+  font-weight: bold;
+}
+p {
+  font-family: 'Cutive Mono', monospace;
+  font-size: 1.2em;
+  margin-left: 70px;
+  margin-right: 800px;
+}
+a {
+  text-decoration:none;
+  color: blue;
+}
+.publication {
+  margin-right: 500px;
+}
+#profile_pic {
+  width: 300px;
+  margin-left: 70px;
+}
+
+</style>
