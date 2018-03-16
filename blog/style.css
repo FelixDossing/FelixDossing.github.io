@@ -30,6 +30,9 @@ a {
 .publication {
   margin-right: 500px;
 }
+.links_container {
+  font-family: 'Share Tech Mono', monospace;
+}
 #profile_pic {
   width: 300px;
   margin-left: 70px;
