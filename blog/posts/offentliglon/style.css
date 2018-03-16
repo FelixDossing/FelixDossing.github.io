@@ -25,13 +25,14 @@ p {
 }
 a {
   text-decoration:none;
-  color: inherit;
+  color: blue;
 }
 .publication {
   margin-right: 500px;
 }
 .links_container a {
   font-family: 'Share Tech Mono', monospace;
+  color:inherit;
   font-size: 1.2em;
 }
 #profile_pic {
