@@ -196,7 +196,7 @@ d3.csv('https://raw.githubusercontent.com/erikgahner/polls/master/polls.csv', fu
        yScale.domain([max+4,0])
        svg.select('#yAxis')
           .transition()
-          .call(yAxis;
+          .call(yAxis);
 
       for (i=0; i<parties.length; i++) {
         if (showing.indexOf(parties[i]) == -1) {
