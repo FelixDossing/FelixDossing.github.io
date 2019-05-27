@@ -29,6 +29,10 @@ p {
 #post_heading {
   padding-top: 50px;
 }
+#post_subheading {
+  padding: 50px 32% 0 32%;
+  font-weight:400;
+}
 .first_letter {
   font-size: 1.2em;
   font-weight: bold;
