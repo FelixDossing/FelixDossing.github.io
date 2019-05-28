@@ -464,7 +464,7 @@ var myChart = new Chart(ctx, {
             data:electionstudy.muslims.data.response[0],
             borderWidth: 1,
             fill:false,
-            backgroundColor:"rgba(237,206,89)",
+            borderColor:"rgba(237,206,89)",
             backgroundColor:"rgba(237,206,89,0.1)",
         },
         {
@@ -472,7 +472,7 @@ var myChart = new Chart(ctx, {
           data:electionstudy.muslims.data.response[1],
           borderWidth: 1,
           fill:false,
-          backgroundColor:"rgba(251,77,61)",
+          borderColorColor:"rgba(251,77,61)",
           backgroundColor:"rgba(251,77,61,0.1)",
       },
       ]
