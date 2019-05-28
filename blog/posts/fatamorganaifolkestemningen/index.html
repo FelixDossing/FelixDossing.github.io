@@ -13,7 +13,6 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <style type="text/css">code{white-space: pre;}</style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="script.js"></script>
 </head>
 <body>
 
@@ -48,10 +47,37 @@ Ifølge Morten Østergård må forklaringen naturligvis være, at Dansk Folkepar
 <br><br>
         <strong>Ingen galoperende fremmedfjendskhed</strong><br>
         For at sige noget om udviklingen i danskernes holdninger, er det naturligvis bedst, hvis man har stillet det samme spørgsmål gentagne gange over en længere periode. Dette har man bl.a. gjort i den danske valgundersøgelse (Stubager et al, 2016), der efter hvert folketingsvalg siden 1971 har stillet danskerne en række spørgsmål om politik. Fra 1990 til 2007 har man spurgt til, hvorvidt indvandring fra muslimske lande på længere sigt udgør en farlig trussel mod Danmarks sikkerhed. Her ses en lille trend opad, om end det år hvor klart flest er enige er året 1990 (68% enige kontra 48% i 2007). Herudover har man fra 1987 til 2015 spurgt til, hvorvidt indvandring udgør en trussel mod vores nationale egenart og her ses en lille trend nedad i andelen af personer, der mener det er tilfældet. I begge tilfælde må man dog konkludere at danskernes holdning lader til at være overvejende stabil.<br>
+</p>
+<div style="width:100%;">
+  <canvas id="myChart"></canvas>
+</div>
+<p>
         Det er imidlertid vanskeligt at udtale sig om fløjene på baggrund af ja/nej-spørgsmål, da de jo ikke kan fortælle os, hvorvidt folks ”nej” er blevet et tiltagende desperat ”nej”. Her har vi brug for spørgsmål med flere svarmuligheder, så vi kan se på hele fordelingen. Denne type spørgsmål kan man bl.a. finde i the European Social Studies, der siden 2002 af flere omgange har stillet danskerne en række spørgsmål omkring immigration og etnicitet. Danskerne er f.eks. blevet spurgt, hvor mange tilflyttere Danmark bør tillade fra lande med anden etnicitet. I figur XXX ses hvor mange, der har svaret ”Mange”, ”En del”, ”Få” og ”Ingen” i henholdsvis perioden 2002-2006, 2008-2012 og i 2014. Det er interessante er, at der hverken er tale om tiltagende indvandreskepsis eller om polarisering. Tværtimod lader hele fordelingen til at rykke mod venstre, hvilket vil sige at danskerne over hele linjen er blevet mere accepterende over for immigration fra individer af anden etnicitet end dansk. Når man spørger til, hvorvidt tilflyttere gør Danmark til et dårligere/bedre sted at bo ses en meget svag tendens til i højere grad at svare ”bedre”. I spørgsmålet om, hvorvidt tilflyttere beriger eller undergraver den danske kultur, ses en lille tendens til polarisering: Der er færre, der svære i midten og flere der svarer mod ekstremerne. I begge tilfælde er disse tendenser imidlertid meget små. I holdningen til, hvorvidt indvandring er godt eller dårligt for den danske økonomi, lader der heller ikke til at være den store forandring at spore.<br>
+</p>
+  <div style="width:100%;">
+    <select id="ess_select" style="width:100%;" onchange="viewSelect(event)"></select>
+    <canvas id="myChart2" height="220"></canvas>
+    <canvas id="myChart2_bar" height="220" style="display:none;"></canvas>
+    <form>
+      <input type="radio" class="grouped" onchange="yearView()" name="yearview" value="grouped" checked> Grouped years<br>
+      <input type="radio" name="yearview" onchange="yearView()" value="all"> All years
+    </form>
+  </div>
+<p>
         I 2002 og i 2014 stillede man en række øvrige spørgsmål, som også tegner et sigende billede. F.eks. er der over hele linjen faldende modstand mod at personer af anden etnicitet giftes ind i ens familie. Ligeledes er der over hele linjen færre, der mener, at det er en væsentligt kvalifikation for tilflyttere at have hvid hud. Efter alt at dømme er danskerne altså blevet mindre racistiske siden 2002. Det samme billede ses, når man spørger, hvorvidt det er en væsentlig kvalifikation at være kristen. Spørger man, hvorvidt tilflyttere modtager mere end de yder, ser man også over hele linjen en bevægelse mod at mene at de yder mere.<br>
+</p>
+  <div style="width:100%;">
+    <select id="twoyear_select" style="width:100%;" onchange="changeTwoYear()"></select>
+    <canvas id="esstwoyear" height="220"></canvas>
+  </div>
+<p>
         At the European Social Studies er foretaget sidste gang i 2014 er indlysende problematisk. Det er inden skyderiet ved Krudttønden og synagogen i Krystalgade og frem for alt inden den store flygtningekrise nåede sit højdepunkt. Ønsker vi at gå længere frem kan vi tage udgangspunkt i det såkaldte Eubarometer, der på vegne af Europa-kommissionen hvert halve år foretager holdningsundersøgelser i en lang række EU lande. Fra november 2014 og senest i november 2018 har man spurgt danskerne om deres holdning til immigration fra lande uden for EU. Som det fremgår neden for, steg andelen, der så ”meget negativt” på dette fra 2014 til 2016 og er derefter faldet lidt igen. Heller ikke i det nyere data finder man altså tegn på en galopperene immigrationsmodstand. Det overordnede billeder lader tværtimod til at være, at danskernes holdninger på området ret stabile, samt at der er en lille tendens til mindre modstand mod indvandring og indvandrere siden 2016.<br>
-        På trods af de stabile grundlæggende holdninger, er der god grund til at tro, at bekymringen for indvandring har været stigende de seneste år. Hos Eurobarometer ses en stor stigning i antallet af personer, der mener at immigration er et af Danmarks to største udfordringer. Ligger man grafen oveni en graf, der viser antallet af flygtninge i Danmark i samme periode, følger de hinanden nærmest perfekt. Danskerne lader altså til at have haft en ganske god føling med at flygtningekrisen udgjorde en stor udfordring for Danmark og som tilstrømningen er faldet, lader bekymringen til at være faldet tilsvarende.<br>
+        På trods af de stabile grundlæggende holdninger, er der god grund til at tro, at bekymringen for indvandring har været stigende de seneste år. Hos Eurobarometer ses en stor stigning i antallet af personer, der mener at immigration er et af Danmarks to største udfordringer. Lægger man grafen oveni en graf, der viser antallet af asylansøgere, der kommer til Danmark i samme periode, følger de hinanden nærmest perfekt. Danskerne lader altså til at have haft en ganske god føling med at flygtningekrisen udgjorde en stor udfordring for Danmark og som tilstrømningen er faldet, lader bekymringen til at være faldet tilsvarende.<br>
+</p>
+  <div style="width:100%;">
+    <canvas id="myChart3"></canvas>
+  </div>
+<p>
 <br><br>
         <strong>Jordskred uden understrøm</strong><br>
         Det er tydeligt for de fleste at tilgangen til indvandrere og flygtninge har ændret sig i dansk politik over de seneste årtier. Spørgsmålet er så, hvorfor man ser en så markant politisk ændring i en periode, hvor holdningen blandt vælgerne ikke lader til at ændre sig det store og måske endda går i den modsatte retning. Dette er der rig mulighed for at spekulere over og jeg vil da også gerne give mig ud i lidt spekulation: Ét godt bud er, at der er kommet mindre afstand mellem partierne og befolkningens holdninger. Ser vi på niveauerne frem for udviklingen, er der masser af modstand mod indvandring at finde. I eurobarometerets tal ser kun omkring XX ”meget positivt” eller ”rimelig positivt” på indvandring fra lande uden for EU, hvorimod XX enten ser ”meget negativt” eller ”rimelig negativt” på dette. Det er lidt overraskende at der i ESS’ data i perioden 2008-2014 er flere, der mener at vi bør tage henholdsvis ”mange” eller ”en del” immigranter af anden etnicitet end der mener at vi bør tage ”få” eller ”ingen”. Eurobarometeret peger dog på at indvandrebegejstringen var ekstra stor i 2014 og det er måske også værd at overveje om formuleringen omkring ”etnicitet” kan have påvirket niveauet af svarene i ESS. En anden forklaring er, at der er mange indvandrekritiske vælgere blandt såkaldte ”svingvælgere”, hvilket vil kunne få partierne til i tilpasse deres politik uforholdsmæssigt meget til disse vælgere. Det skyldes at et vælgermaksimerende parti/en vælgermaksimerende blok ofte vil have fordel af at bejle mere til vælgere, der er mere tilbøjelige til at flytte deres stemme.<br>
@@ -64,6 +90,8 @@ Ifølge Morten Østergård må forklaringen naturligvis være, at Dansk Folkepar
       </ol> -->
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+  <script src="script.js"></script>
 
 </body>
 </html>
