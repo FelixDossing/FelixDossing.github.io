@@ -14,26 +14,33 @@ h2 {
 }
 p {
   font-family: 'EB Garamond', 'Times', serif;
-  font-size: 1.4em;
+  font-size: 1.3em;
+  text-align:justify;
 }
 .post_container a {
   font-family: 'EB Garamond', 'Times', serif;
-  font-size: 1.4em;
+  font-size: 1.3em;
 }
 .post_container {
-  padding-bottom: 250px;
+  margin: 10px 15%;
+  padding-bottom: 120px;
   text-align:center;
 }
-#text_block {
-  padding: 50px 32% 0 32%;
+
+.chart_div {
+  margin: 20px 0;
 }
+
 #post_heading {
-  padding-top: 50px;
+  padding-top: 70px;
 }
 #post_subheading {
-  padding: 50px 15% 0 15%;
-  font-weight:400;
-  font-size:1.4em;
+  margin-top:40px;
+  font-weight:500;
+  font-size:1.2em;
+}
+#text_block {
+  margin: 50px 20%;
 }
 .first_letter {
   font-size: 1.2em;
@@ -44,6 +51,21 @@ p {
   height: 1px;
   background-color: black;
   position: fixed;
+}
+select {
+  margin: 20px 0;
+}
+
+@media (max-width: 1000px) {
+  #text_block {
+    margin:50px 10%;
+  }
+  .post_container {
+    margin: 10px 5%;
+  }
+  #post_heading {
+    font-size: 3em;
+  }
 }
 
 </style>
