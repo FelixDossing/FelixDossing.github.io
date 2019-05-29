@@ -18,18 +18,20 @@ $(document).on('scroll',function() {
 
 /// Graph stuff
 
-let electionstudy = {
-  muslims:{
-    title:"Muslimsk indvandring udgør trussel for DK",
-    question:"De muslimske lande udgør på længere sigt en farlig trussel mod Danmarks sikkerhed",
-    data:{ answers:["Enig", "Uenig"], years:[1990,1994,1998,2001,2005,2007], response:[[68,51,43,43,45,48],[22,40,40,42,38,32]] }
-  },
-  sovereignty:{
-    title:"Indvandring udgør trussel mod national egenart",
-    question:"Indvandring udgør en alvorlig trussel mod vores nationale egenart",
-    data:{ answers:["Enig", "Uenig"], years:[1988,1990,1994,1998,2001,2005,2007,2011,2015], response:[[48,47,48,45,45,45,46,53,44],[48,43,47,42,40,41,34,31,41]] }
-  },
-}
+let electionstudy = [
+    {
+      name:"muslimer",
+      title:"Muslimsk indvandring udgør trussel for DK",
+      question:"De muslimske lande udgør på længere sigt en farlig trussel mod Danmarks sikkerhed",
+      data:{ answers:["Enig", "Uenig"], years:[1990,1994,1998,2001,2005,2007], response:[[68,51,43,43,45,48],[22,40,40,42,38,32]] }
+    },
+    {
+      name:"egenart",
+      title:"Indvandring udgør trussel mod national egenart",
+      question:"Indvandring udgør en alvorlig trussel mod vores nationale egenart",
+      data:{ answers:["Enig", "Uenig"], years:[1988,1990,1994,1998,2001,2005,2007,2011,2015], response:[[48,47,48,45,45,45,46,53,44],[48,43,47,42,40,41,34,31,41]] }
+    },
+]
 let eurobarometer = {
   noneuimmigration:{
     title:"Syn på indvandring fra lande udenfor EU",
@@ -280,13 +282,35 @@ let bar_colors = ['#ffded1','#F8B195','#F67280','#C06c84','#6c5b7b','#355c7d','#
 ////*** Add to ess_select
 ess.forEach((question,index) => {
   document.getElementById('ess_select').innerHTML += ('<option value="'+index+'">'+question.title+'</option>');
-})
+});
 ess_twoyear.forEach((question,index) => {
   document.getElementById('twoyear_select').innerHTML += ('<option value="'+index+'">'+question.title+'</option>');
-})
+});
+
 
 document.getElementById('ess_select').value = ess.map(e=>e.name).indexOf('otherethnicity');
 document.getElementById('twoyear_select').value = ess_twoyear.map(e=>e.name).indexOf('hvid');
+
+function electChange() {
+  let value = document.getElementById('electionstudy_select').value;
+  myChart.data.labels = electionstudy[value].data.years;
+  myChart.data.datasets = [
+      {
+        label: [electionstudy[value].data.answers[0]],
+        data:electionstudy[value].data.response[0],
+        borderColor:"rgba(237,206,89)",
+        backgroundColor:"rgba(237,206,89,0.1)",
+    },
+    {
+      label: [electionstudy[value].data.answers[1]],
+      data:electionstudy[value].data.response[1],
+      borderColor:"rgba(251,77,61)",
+      backgroundColor:"rgba(251,77,61,0.1)",
+    },
+  ]
+
+  myChart.update();
+}
 
 function yearView() {
   if (document.getElementsByClassName('grouped')[0].checked) {
@@ -457,17 +481,17 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels:electionstudy.muslims.data.years,
+        labels:electionstudy[0].data.years,
         datasets: [
           {
-            label: [electionstudy.muslims.data.answers[0]],
-            data:electionstudy.muslims.data.response[0],
+            label: [electionstudy[0].data.answers[0]],
+            data:electionstudy[0].data.response[0],
             borderColor:"rgba(237,206,89)",
             backgroundColor:"rgba(237,206,89,0.1)",
         },
         {
-          label: [electionstudy.muslims.data.answers[1]],
-          data:electionstudy.muslims.data.response[1],
+          label: [electionstudy[0].data.answers[1]],
+          data:electionstudy[0].data.response[1],
           borderColor:"rgba(251,77,61)",
           backgroundColor:"rgba(251,77,61,0.1)",
       },
@@ -494,14 +518,15 @@ var myChart3 = new Chart(canvas, {
       type: 'bar',
       label: refugees.title,
       yAxisID: "y-axis-0",
-      backgroundColor: "rgba(217,83,79,0.75)",
+      backgroundColor: "rgba(251,77,61,0.6)",
       data: refugees.data.amount,
     },
     {
       type: 'line',
       label: eurobarometer.mostimportantissue.title,
       yAxisID: "y-axis-1",
-      backgroundColor: "rgba(51,51,51,0.5)",
+      borderColor: "rgba(10,17,40,0.5)",
+      backgroundColor: "rgba(10,17,40,0.3)",
       data: eurobarometer.mostimportantissue.data.response
     },
   ]
@@ -533,3 +558,38 @@ var myChart3 = new Chart(canvas, {
     }
   }
 });
+
+let canvaseuro = document.getElementById('euroChart').getContext('2d');
+let euroChart = new Chart(canvaseuro, {
+  type:'bar',
+  data: {
+    labels:eurobarometer.noneuimmigration.data.answers,
+    datasets:[
+      {
+        data:eurobarometer.noneuimmigration.data.response_b[0],
+        label:eurobarometer.noneuimmigration.data.years_b[0],
+        backgroundColor:'#FFC300'
+      },
+      {
+        data:eurobarometer.noneuimmigration.data.response_b[1],
+        label:eurobarometer.noneuimmigration.data.years_b[1],
+        backgroundColor:'#FF5733'
+      },
+      {
+        data:eurobarometer.noneuimmigration.data.response_b[2],
+        label:eurobarometer.noneuimmigration.data.years_b[2],
+        backgroundColor:'#C70039'
+      },
+      {
+        data:eurobarometer.noneuimmigration.data.response_b[3],
+        label:eurobarometer.noneuimmigration.data.years_b[3],
+        backgroundColor:'#03CEA4'
+      },
+      {
+        data:eurobarometer.noneuimmigration.data.response_b[4],
+        label:eurobarometer.noneuimmigration.data.years_b[4],
+        backgroundColor:'#5877A8'
+      },
+    ]
+  }
+})
