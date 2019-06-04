@@ -55,8 +55,14 @@ p {
 select {
   margin: 20px 0;
 }
-
+.main_img {
+  width:80%;
+  margin-top:30px;
+}
 @media (max-width: 1000px) {
+  .main_img {
+    width:100%;
+  }
   #text_block {
     margin:50px 10%;
   }
