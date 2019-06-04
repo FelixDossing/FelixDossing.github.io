@@ -134,7 +134,7 @@ let ess = [
   [5.91,3.62,8.03,10.34,8.49,18.47,9.24,11.76,13.42,4.84,5.87]]
   },
   {
-    title:"Immigration fra lande med samme etnicitet",
+    title:"Hvor mange immigranter af samme etnicitet bør DK tillade?",
     name:"sameethnicity",
     question:"I hvilket omfang synes du, at Danmark bør tillade mennesker, der tilhører samme race ller entiske gruppe som de fleste danskere, at flytte hertil?",
     years: [2002,2004,2006,2008,2010,2012,2014],
@@ -152,7 +152,7 @@ let ess = [
   [24.71,56.67,16.22,2.41]]
   },
   {
-    title:"Immigration fra lande med anden etnicitet",
+    title:"Hvor mange immigranter af anden etnicitet bør DK tillade?",
     name:"otherethnicity",
     question:"I hvilket omfang synes du, at Danmark bør tillade mennesker, der tilhører en anden race ller entiske gruppe end de fleste danskere, at flytte hertil?",
     years: [2002,2004,2006,2008,2010,2012,2014],
