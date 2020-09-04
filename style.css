@@ -19,7 +19,8 @@ h2 {
 }
 p {
   font-family: 'Cutive Mono', monospace;
-  font-size: 1.2em;
+  font-weight: 500;
+/*   font-size: 1.2em; */
   margin-left: 70px;
   margin-right: 800px;
 }
