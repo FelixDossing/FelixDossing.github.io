@@ -4,7 +4,7 @@ body {
   margin-top: 50px;
 }
 h1 {
-  font-family: 'Share Tech Mono', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.8em;
   margin-left: 70px;
   margin-top: 50px;
@@ -18,8 +18,7 @@ h2 {
   font-weight: bold;
 }
 p {
-  font-family: 'Cutive Mono', monospace;
-  font-weight: 600;
+  font-family: 'Roboto Mono', monospace;
 /*   font-size: 1.2em; */
   margin-left: 70px;
   margin-right: 800px;
